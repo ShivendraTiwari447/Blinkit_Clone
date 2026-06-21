@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../Context/CartContext";
 
 function Header() {
   const { cartCount } = useCart();
