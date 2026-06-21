@@ -4,65 +4,42 @@ function ProductCard({
   quantity,
   price,
   deliveryTime = "10 mins",
+  tag = "Fresh",
 }) {
   return (
-    <div
-      className="
-      bg-white
-      rounded-2xl
-      p-3
-      shadow-sm
-      border
-      border-gray-100
-      hover:shadow-lg
-      transition-all
-      duration-300
-      "
-    >
-      {/* Product Image */}
-      <div className="flex justify-center">
+    <div className="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+      {/* Tag */}
+      <div className="flex justify-between items-center">
+        <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-medium">
+          {tag}
+        </span>
+
+        <span className="text-xs text-gray-500">⚡ {deliveryTime}</span>
+      </div>
+
+      {/* Image */}
+      <div className="flex justify-center my-3">
         <img
           src={image}
           alt={name}
-          className="h-36 object-contain"
+          className="h-32 object-contain transition-transform duration-300 hover:scale-105"
         />
       </div>
 
-      {/* Delivery Badge */}
-      <div className="inline-flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-md text-xs font-medium mt-2">
-        ⚡ {deliveryTime}
-      </div>
-
-      {/* Product Name */}
-      <h3 className="font-semibold mt-3 text-gray-800 line-clamp-2 min-h-[48px]">
+      {/* Name */}
+      <h3 className="font-semibold text-gray-800 text-sm line-clamp-2 min-h-[40px]">
         {name}
       </h3>
 
       {/* Quantity */}
-      <p className="text-sm text-gray-500 mt-1">
-        {quantity}
-      </p>
+      <p className="text-xs text-gray-500 mt-1">{quantity}</p>
 
-      {/* Price + Add */}
+      {/* Price + Button */}
       <div className="flex items-center justify-between mt-4">
-        <p className="font-bold text-lg">
-          ₹{price}
-        </p>
+        <p className="font-bold text-lg text-gray-900">₹{price}</p>
 
-        <button
-          className="
-          border-2
-          border-[#0C831F]
-          text-[#0C831F]
-          px-5
-          py-1.5
-          rounded-lg
-          font-semibold
-          hover:bg-[#0C831F]
-          hover:text-white
-          transition
-          "
-        >
+        <button className="bg-[#0C831F] text-white px-4 py-1.5 rounded-lg font-semibold text-sm hover:bg-green-700 transition">
           ADD
         </button>
       </div>
